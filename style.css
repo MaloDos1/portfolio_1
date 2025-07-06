@@ -1,0 +1,407 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+/* Fond général pour toute la page */
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8; /* Gris très clair */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #1e3c72, #2a5298, #3498db);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-surname {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.logo-firstname {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #87ceeb;
+    margin-top: -0.2rem;
+}
+
+.logo-studies {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #b8d4f0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.nav-links a.active {
+    color: #87ceeb;
+    position: relative;
+}
+
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #87ceeb;
+    border-radius: 3px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #87ceeb;
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.nav-links a:hover {
+    color: #87ceeb;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    padding: 100px 0 120px; /* Augmenter le padding en bas */
+    display: flex;
+    flex-direction: column; /* Modification ici */
+    align-items: center;
+    justify-content: flex-start; /* Modification ici */
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Styles spécifiques pour la section accueil */
+.home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+}
+
+.home-content {
+    flex: 1;
+    max-width: 700px;
+    margin-top: 5%;
+}
+
+.home-decoration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    line-height: 1.2;
+    position: relative;
+}
+
+.highlight {
+    color: #3a7bd5;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: rgba(135, 206, 235, 0.3);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.home-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: #666;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    color: white;
+    box-shadow: 0 4px 15px rgba(58, 123, 213, 0.4);
+}
+
+.cta-primary:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(58, 123, 213, 0.6);
+}
+
+.cta-secondary {
+    background: transparent;
+    color: #3a7bd5;
+    border: 2px solid #3a7bd5;
+}
+
+.cta-secondary:hover {
+    background-color: rgba(58, 123, 213, 0.1);
+    transform: translateY(-6px);
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Bandeaux de séparation entre sections - modifiés */
+.section-divider {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #3498db);
+    margin-top: -50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: skewY(-1deg); /* Angle d'inclinaison réduit de -2deg à -1deg */
+}
+
+/* Suppression de l'animation blanche qui traverse le bandeau */
+.section-divider::before {
+    display: none; /* Suppression complète de l'effet */
+}
+
+.section-divider::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+}
+
+.section-title {
+    transform: skewY(1deg); /* Correspondant à l'angle modifié du bandeau */
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: #87ceeb;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.section-divider:hover .section-title {
+    transform: skewY(1deg) translateY(-3px); /* Correspondant à l'angle modifié du bandeau */
+}
+
+.section-divider:hover .section-title::before {
+    width: 100px;
+}
+
+/* Animation de vague sur le bandeau */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23ffffff"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"/></svg>');
+    background-size: 1200px 100%;
+    animation: wave 20s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1200px;
+    }
+}
+
+/* Ajustement du style des sections */
+.section-content {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    padding: 0 2rem;
+    margin-top: 30px; /* Espace après le titre */
+}
+
+/* Animation d'apparition au défilement */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style pour effet de clic */
+.click-effect {
+    animation: clickPulse 0.3s ease;
+}
+
+@keyframes clickPulse {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(0.95) translateY(2px); }
+    100% { transform: scale(1) translateY(0); }
+}
+/* Style pour l'image dans home-decoration */
+.profile-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 20%;
+}
+
+.profile-image {
+    width: 300px; /* Taille fixe réduite */
+    height: auto; /* Préserve le ratio d'aspect */
+    /*border-radius: 15px;*/
+    /*box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);*/
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    object-fit: cover; /* Assure que l'image couvre bien l'espace sans déformation */
+}
+
+.profile-image:hover {
+    transform: translateY(-10px);
+    /*box-shadow: 0 15px 40px rgba(58, 123, 213, 0.25);*/
+}
+
+/* Ajustement responsive */
+@media screen and (max-width: 768px) {
+    .profile-image {
+        width: 220px; /* Encore plus petit sur les écrans mobiles */
+    }
+}
