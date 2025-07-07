@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <!-- Navigation -->
 <nav class="navbar">
@@ -28,7 +29,7 @@
             <li><a href="#projets">Projets</a></li>
             <li><a href="#competence">Compétence</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="CV_Malo_Bourlon.pdf">Mon CV</a></li>
+            <li><a href="CV_Malo_Bourlon.pdf" download="CV_Malo_Bourlon.pdf">Mon CV</a></li>
         </ul>
     </div>
 </nav>
@@ -56,54 +57,56 @@
 
 <!-- Bandeau de séparation pour la section À Propos -->
 <div class="section-divider">
-    <div class="wave"></div>
     <h2 class="section-title">À Propos de Moi</h2>
 </div>
 
 <!-- Section 2: À Propos -->
-<section id="a-propos" class="section">
+<section id="a-propos" class="section-pres">
     <div class="section-content fade-in">
         <p>Je suis actuellement étudiant en BTS SIO ( Service Informatique aux Organisations ) option SISR ( Solution d'infrastructure, Système et Réseaux )  au centre de formation de l'UTEC à Avon, je vous propose ce portfolio afin de présenter mes compétences, projet et autres  </p>
         <div class="card">
             <h3>Ma Passion</h3>
             <p>Décrivez ici ce qui vous passionne dans vos études et vos objectifs professionnels.</p>
         </div>
+
     </div>
+
+
+    <div class="timeline fade-in">
+        <h1>Voici les étapes clés de mon parcours académique et professionnel.</h1>
+        <div class="timeline-item" >
+            <h3>Formation Actuelle</h3>
+            <div class="date">2023 - Présent</div>
+            <p>[Nom du diplôme] à [Nom de l'établissement]</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Baccalauréat</h3>
+            <div class="date">2023</div>
+            <p>[Série du bac] obtenu avec [mention]</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Expérience/Stage</h3>
+            <div class="date">2022</div>
+            <p>Stage ou expérience professionnelle significative</p>
+        </div>
+    </div>
+
 </section>
 
 <!-- Bandeau de séparation pour la section Formation -->
 <div class="section-divider">
-    <div class="wave"></div>
-    <h2 class="section-title">Mon Parcours</h2>
+    <h2 class="section-title">Ma Formation</h2>
 </div>
 
 <!-- Section 3 : formation -->
 <section id="formation" class="section">
     <div class="section-content fade-in">
-        <p>Voici les étapes clés de mon parcours académique et professionnel.</p>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Formation Actuelle</h3>
-                <div class="date">2023 - Présent</div>
-                <p>[Nom du diplôme] à [Nom de l'établissement]</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Baccalauréat</h3>
-                <div class="date">2023</div>
-                <p>[Série du bac] obtenu avec [mention]</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Expérience/Stage</h3>
-                <div class="date">2022</div>
-                <p>Stage ou expérience professionnelle significative</p>
-            </div>
-        </div>
+
     </div>
 </section>
 
 <!-- Bandeau de séparation pour la section Entreprise -->
 <div class="section-divider">
-    <div class="wave"></div>
     <h2 class="section-title">Mes Compétences</h2>
 </div>
 
@@ -126,7 +129,6 @@
 
 <!-- Bandeau de séparation pour la section Projets -->
 <div class="section-divider">
-    <div class="wave"></div>
     <h2 class="section-title">Mes Projets</h2>
 </div>
 
@@ -153,7 +155,6 @@
 
 <!-- Bandeau de séparation pour la section Compétence -->
 <div class="section-divider">
-    <div class="wave"></div>
     <h2 class="section-title">Autre Compétence</h2>
 </div>
 
@@ -166,42 +167,134 @@
 
 <!-- Bandeau de séparation pour la section Contact -->
 <div class="section-divider">
-    <div class="wave"></div>
     <h2 class="section-title">Contactez-moi</h2>
 </div>
 
 <!-- Section 6: Contact -->
 <section id="contact" class="section">
     <div class="section-content fade-in">
-        <p>N'hésitez pas à me contacter pour toute question ou opportunité.</p>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" required>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informations de Contact</h3>
+                <p class="contact-description">Je suis ouvert aux opportunités professionnelles et aux discussions. N'hésitez pas à me contacter !</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="contact-icon email-icon" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                            </svg>
+                        </i>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>malo.bourlon@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="contact-icon location-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-house-fill" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                                <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                            </svg>
+                        </i>
+                        <div class="contact-text">
+                            <h4>Localisation</h4>
+                            <p>France</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link linkedin" target="_blank" title="LinkedIn">
+                        <i class="social-icon linkedin-icon"></i>
+                    </a>
+                    <a href="#" class="social-link github" target="_blank" title="GitHub">
+                        <i class="social-icon github-icon"></i>
+                    </a>
+                    <a href="#" class="social-link twitter" target="_blank" title="Twitter">
+                        <i class="social-icon twitter-icon"></i>
+                    </a>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+
+            <div class="contact-form-container">
+                <h3>Envoyez-moi un message</h3>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="nom" name="nom" required placeholder>
+                        <label for="nom">Nom</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="sujet" name="sujet" required placeholder>
+                        <label for="sujet">Sujet</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Envoyer le message</span>
+                        <i class="send-icon"></i>
+                    </button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
-        <div style="margin-top: 2rem;">
-            <p><strong>Email:</strong> votre.email@exemple.com</p>
-            <p><strong>LinkedIn:</strong> linkedin.com/in/votre-profil</p>
-            <p><strong>GitHub:</strong> github.com/votre-username</p>
         </div>
     </div>
 </section>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="footer-logo">
+                <div class="footer-name">
+                    <div class="footer-surname">Bourlon</div>
+                    <div class="footer-firstname">Malo</div>
+                </div>
+                <div class="footer-studies">BTS SIO option SISR</div>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Navigation</h3>
+            <ul class="footer-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À Propos</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Réseaux Sociaux</h3>
+            <ul class="footer-social">
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="#" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul class="footer-contact">
+                <li>Email : malo.bourlon@gmail.com</li>
+                <li>Localisation : France</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Malo Bourlon. Tous droits réservés.</p>
+    </div>
+</footer>
 
 <!-- Scripts -->
 
 
 </body>
-</html><script>
+</html>
+<script>
+
+
     // Fonction pour détecter la section active lors du défilement
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -257,7 +350,7 @@
                 divider.id = 'divider-' + sections[index];
             }
         });
-        
+
         // Fonction de défilement animé améliorée
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -300,4 +393,7 @@
             alert('Veuillez remplir tous les champs requis correctement.');
         }
     });
+
+
+
 </script>
