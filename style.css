@@ -141,47 +141,68 @@ body {
     justify-content: flex-start; /* Modification ici */
     position: relative;
 }
-
-.a-propos .section-content.fade-in,
-.a-propos .timeline.fade-in {
-    flex: 1;             /* each takes equal available space */
-    min-width: 300px;    /* prevents them from getting too narrow */
-}
-
-
 .a-propos {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;           /* space between the columns */
-    margin: 50px 0;      /* vertical spacing around the section */
-    min-height: 800px;
+    justify-content: center;
+    align-items: stretch; /* Pour que les conteneurs aient la même hauteur */
+    gap: 2rem; /* Espace entre les deux conteneurs */
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 1200px; /* Hauteur minimale pour la section "À propos" */
 }
+
+.a-propos-info, .a-propos-timeline {
+    background: #f8f3f3;
+    padding: 2.5rem 3rem; /* Même padding pour les deux */
+    border-radius: 20px;
+    color: black;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    width: auto;
+    flex: 0 0 auto; /* Ne pas laisser flex modifier la taille */
+}
+.a-propos-skills{
+    background: #f8f3f3;
+    padding: 2.5rem 3rem; /* Même padding pour les deux */
+    border-radius: 20px;
+    color: black;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    width: auto;
+    flex: 0 0 auto; /* Ne pas laisser flex modifier la taille */
+}
+}
+/* Supprimer ces styles qui créent un déséquilibre */
+.a-propos-info {
+    margin-right: 0;
+    padding: 2.5rem 3rem; /* Même padding que l'autre conteneur */
+}
+
+.a-propos-timeline {
+    margin-left: 0;
+}
+
+/* Maintenir le responsive */
 @media (max-width: 768px) {
     .a-propos {
         flex-direction: column;
     }
-}
-.timeline fade-in, h1{
-    text-align: center;
 
+    .a-propos-info, .a-propos-timeline {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
 }
-.timeline-item, h3 {
-    text-align: center;
 
-}
-.date {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #555;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-.date ,p {
-    text-align: center;
-
-}
 
 
 .container {
