@@ -36,6 +36,9 @@
 
 <!-- Section 1: Accueil -->
 <section id="accueil" class="section">
+
+    <div class="background-image"></div>
+
     <div class="container home-container">
         <div class="home-content">
             <h1 class="home-title">Bienvenue sur mon <span class="highlight">Portfolio</span></h1>
@@ -61,13 +64,14 @@
 </div>
 <!-- Section 2: À Propos -->
 <section class="a-propos" id="a-propos">
+    <div class="background-image-propos"></div>
 
     <div class="section-content fade-in a-propos-info">
         <h1>À propos de moi</h1>
-        <p>Je suis actuellement étudiant en BTS SIO (Service Informatique aux Organisations)
+        <p>Je suis Malo Bourlon, actuellement alternant en BTS SIO (Service Informatique aux Organisations)
             option SISR (Solution d'infrastructure, Système et Réseaux) au centre de formation
-            de l'UTEC à Avon, je vous propose ce portfolio afin de présenter mes compétences, projet et
-            autres</p>
+            de l'UTEC à Avon et effectuant mon alternance au sein de l'université Paris 1 Panthéon Sorbonne.
+            Je vous propose ce portfolio afin de présenter mes compétences, projet et autres connaissances.</p>
     </div>
 
     <div class="timeline fade-in a-propos-timeline">
@@ -212,8 +216,11 @@
                     <a href="#" class="social-link linkedin" target="_blank" title="LinkedIn">
                         <i class="social-icon linkedin-icon"></i>
                     </a>
-                    <a href="#" class="social-link github" target="_blank" title="GitHub">
+                    <a href="https://github.com/MaloDos1" class="social-link github" target="_blank" title="GitHub">
                         <i class="social-icon github-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                        </svg>
                     </a>
                     <a href="#" class="social-link twitter" target="_blank" title="Twitter">
                         <i class="social-icon twitter-icon"></i>
@@ -300,68 +307,46 @@
 <!-- Scripts -->
 
 
-</body>
-</html>
+
+
+<!-- Scripts -->
 <script>
-
-
     // Fonction pour détecter la section active lors du défilement
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    function onScroll() {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            // Si nous avons défilé au-delà du quart supérieur de la section
-            if (window.pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Animation des éléments au défilement
-    function handleScrollAnimations() {
-        const fadeElements = document.querySelectorAll('.fade-in');
-
-        fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150; // Nombre de pixels visibles avant de déclencher l'animation
-
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('visible');
-            }
-        });
-    }
-
-    // Ajouter l'écouteur d'événement de défilement
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('scroll', handleScrollAnimations);
-
-    // Appeler onScroll au chargement de la page pour définir l'état initial
     document.addEventListener('DOMContentLoaded', function() {
-        onScroll();
-        handleScrollAnimations();
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
 
-        // Ajouter des identifiants uniques aux bandeaux pour le défilement
-        const dividers = document.querySelectorAll('.section-divider');
-        const sections = ['a-propos', 'formation', 'entreprise', 'projets', 'competence', 'contact'];
+        function onScroll() {
+            let current = '';
 
-        dividers.forEach((divider, index) => {
-            if (index < sections.length) {
-                divider.id = 'divider-' + sections[index];
-            }
-        });
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-        // Fonction de défilement animé améliorée
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Animation des éléments au défilement
+        function handleScrollAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Défilement fluide
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -371,10 +356,8 @@
 
                 if (!targetElement) return;
 
-                // Effet visuel simple qui n'interfère pas avec hover
+                // Effet visuel simple
                 this.classList.add('click-effect');
-
-                // Retirer la classe après l'animation
                 setTimeout(() => {
                     this.classList.remove('click-effect');
                 }, 300);
@@ -384,13 +367,20 @@
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-                // Animation de défilement fluide
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: "smooth"
                 });
             });
         });
+
+        // Ajouter les écouteurs d'événements
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', handleScrollAnimations);
+
+        // Exécuter au chargement
+        onScroll();
+        handleScrollAnimations();
     });
 
     // Gestion du formulaire de contact
@@ -403,7 +393,6 @@
             alert('Veuillez remplir tous les champs requis correctement.');
         }
     });
-
-
-
 </script>
+</body>
+</html>
