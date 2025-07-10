@@ -141,69 +141,184 @@ body {
     justify-content: flex-start; /* Modification ici */
     position: relative;
 }
+/* Nouvelle structure pour la section a-propos */
 .a-propos {
-    display: flex;
-    justify-content: center;
-    align-items: stretch; /* Pour que les conteneurs aient la même hauteur */
-    gap: 2rem; /* Espace entre les deux conteneurs */
-    max-width: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Trois colonnes de taille égale */
+    gap: 2rem;
+    max-width: 85%;
     margin: 0 auto;
     padding: 2rem;
-    min-height: 1200px; /* Hauteur minimale pour la section "À propos" */
+    min-height: auto;
 }
 
-.a-propos-info, .a-propos-timeline {
-    background: #f8f3f3;
-    padding: 2.5rem 3rem; /* Même padding pour les deux */
-    border-radius: 20px;
-    color: black;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-    width: auto;
-    flex: 0 0 auto; /* Ne pas laisser flex modifier la taille */
-}
-.a-propos-skills{
-    background: #f8f3f3;
-    padding: 2.5rem 3rem; /* Même padding pour les deux */
-    border-radius: 20px;
-    color: black;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-    width: auto;
-    flex: 0 0 auto; /* Ne pas laisser flex modifier la taille */
-}
-}
-/* Supprimer ces styles qui créent un déséquilibre */
+/* Style pour la partie info avec fond dégradé comme contact-info */
 .a-propos-info {
-    margin-right: 0;
-    padding: 2.5rem 3rem; /* Même padding que l'autre conteneur */
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    padding: 3rem;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
+.a-propos-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #87ceeb;
+}
+
+.a-propos-info p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #b8d4f0;
+    text-align: left;
+}
+
+/* Style pour la timeline avec fond blanc comme contact-form-container */
 .a-propos-timeline {
-    margin-left: 0;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-/* Maintenir le responsive */
-@media (max-width: 768px) {
+.a-propos-timeline h1 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 2rem;
+    border-left: 3px solid #3a7bd5;
+    width: 100%;
+    text-align: left;
+}
+
+.timeline-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.timeline-item .date {
+    font-size: 0.9rem;
+    color: #3a7bd5;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    color: #666;
+    margin-bottom: 0;
+    text-align: left;
+}
+.timeline-item:hover {
+    border-left-width: 5px;
+    padding-left: 32px;
+    transition: all 0.3s ease;
+    background-color: rgba(58, 123, 213, 0.05);
+    border-radius: 0 10px 10px 0;
+}
+/* Style pour la troisième section (compétences) */
+.a-propos-skills {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 0; /* Supprimer la marge du haut */
+}
+
+.a-propos-skills h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    position: relative;
+    display: inline-block;
+}
+
+.a-propos-skills h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #3a7bd5;
+    border-radius: 2px;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.a-propos-timeline:hover,
+.a-propos-skills:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.a-propos-timeline,
+.a-propos-skills,
+.timeline-item {
+    transition: all 0.3s ease;
+}
+.skills-list li {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(58, 123, 213, 0.15);
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    color: white;
+}
+
+/* Responsive pour a-propos */
+@media screen and (max-width: 968px) {
     .a-propos {
-        flex-direction: column;
-    }
-
-    .a-propos-info, .a-propos-timeline {
-        width: 100%;
-        margin-bottom: 2rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
+@media screen and (max-width: 576px) {
+    .a-propos-info,
+    .a-propos-timeline,
+    .a-propos-skills {
+        padding: 2rem;
+    }
+}
 
+.a-propos-info:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+}
 
 .container {
     max-width: 1200px;
@@ -327,7 +442,7 @@ body {
     width: 100%;
     height: 150px;
     background: linear-gradient(135deg, #1e3c72, #2a5298, #3498db);
-    margin-top: -50px;
+    margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
@@ -371,7 +486,7 @@ body {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 100px;
     height: 4px;
     background-color: #87ceeb;
     border-radius: 2px;
@@ -399,11 +514,10 @@ body {
 
 /* Ajustement du style des sections */
 .section-content {
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
     text-align: center;
-    padding: 0 2rem;
-    margin-top: 30px; /* Espace après le titre */
+    padding: 3rem;
 }
 
 /* Animation d'apparition au défilement */
